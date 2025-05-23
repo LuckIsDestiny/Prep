@@ -200,3 +200,32 @@ User Access: A user with the USER role should be able to access the / endpoint b
 Admin Access: A user with the ADMIN role should be able to access both the / and /admin endpoints.
 
 You are not required to implement a front-end for this application. It is sufficient to create the back-end API and test it using a tool like Postman.
+
+---------------------------------------------------------------------------------------------------------------------
+Spring CRUD-3
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+The government is building a centralized library management system which involves a micro-service, allowing people to issue books and return them at the right time.
+ 
+Library management requires creating users and renewing user subscriptions via authenticated processes. Secure create-user and renew-user-subscription APIs with Spring Security. The API issue-book should be permitted for everyone. This micro-service should be built using the Spring Boot REST API framework and it should connect to the database using the JPA API and secure methods using Spring Security.
+ 
+In this task, implement three APIs for which the details are given below:
+ 
+  /api/v1/create-user [POST]: Simple user save method in an authenticated manner
+  /api/v1/issue-book [POST]: Send issue, check if users subscribed(see subscribed field in User entity), otherwise throw SubscriptionExpiredException- permitAll
+/api/v1/renew-user-subscription/{id} [GET]: Send userId, set user subscription to true in an authenticated manner.
+ 
+Your task is to complete the files given below:
+ 
+src/main/java/com/wecp/library/controller/LibraryController.java
+src/main/java/com/wecp/library/security/WebSecurityConfigurer.java
+src/main/java/com/wecp/library/repository/UserRepository.java
+src/main/java/com/wecp/library/repository/IssueRepository.java
+ 
+You can find blank jpa repositories here:
+ 
+src/main/java/com/wecp/library/repository/UserRepository.java
+src/main/java/com/wecp/library/repository/IssueRepository.java
+ 
+Notes:
+Implementation related specifics are added directly as javadocs in the workspace.
+Ensure that the structure and datatypes of the APIs are followed as specified in the comments to ensure that the code is evaluated correctly.
