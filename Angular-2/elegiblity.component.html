@@ -1,0 +1,24 @@
+<h2>Voting Eligibility Checker</h2>
+<input type="number" [(ngModel)]="age" placeholder="Enter your age" />
+<button (click)="checkEligibility()">Check</button>
+<p>{{ message }}</p>
+
+<hr>
+
+<h2>Employee List</h2>
+<table border="1">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Department</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let emp of employees">
+      <td>{{ emp.id }}</td>
+      <td>{{ emp.name }}</td>
+      <td>{{ emp.department }}</td>
+    </tr>
+  </tbody>
+</table>
