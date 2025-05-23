@@ -99,5 +99,37 @@ Test Cases:
 above: The browser opens with the application running. The message "eligible to vote" should be displayed.
 
 Run the application using the ng serve -o command: The browser opens with the application running. The Employee array should be correctly displayed in a table format using the ngFor directive.
-Give solution
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+React - patient
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+Digital Patient Registration System Development in ReactJS for a Clinic
 
+Develop a patient registration form for a clinic using ReactJS. The form should be designed to capture the patient's name, date of birth, medical history, and current medications, and incorporate routing based on validation outcomes.
+
+Fields:
+
+Tasks:
+
+Patient Name: Text field
+
+Date of Birth: Date picker
+
+Medical History: Textarea
+
+Current Medications: Text field
+
+1. Create a patient registration form component with the specified fields.
+
+2. Include validation for each input.
+
+3. Verify form submission with all valid inputs.
+
+4. Verify form submission with empty mandatory fields.
+
+5. Ensure that the date of birth is not a future date.
+
+6. Ensure proper error messages are displayed for both valid and invalid data entries.
+
+7. If validations pass, navigate to a welcome page using React Router.
+
+8. If validations fail, navigate to an Error Page using React Router
