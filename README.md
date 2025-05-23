@@ -84,21 +84,8 @@ The application should prompt the user to enter their age and display the approp
 The Employee array should be correctly displayed in a table format using the ngFor directive.
 
 Test Cases:
+ Run the application using the ng serve -o command and enter an age of 18 or above The browser opens with the application running. The message "eligible to vote" should be displayed.
 
-1. Run the application using the ng serve -o command and enter an age less than
-
-
-
-18: The browser opens with the application running. The message "not eligible to vote" should be displayed.
-
-2. Run the application using the ng serve -o command and enter an age of 18 or
-
-
-3. 
-
-above: The browser opens with the application running. The message "eligible to vote" should be displayed.
-
-Run the application using the ng serve -o command: The browser opens with the application running. The Employee array should be correctly displayed in a table format using the ngFor directive.
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
 React - patient
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
