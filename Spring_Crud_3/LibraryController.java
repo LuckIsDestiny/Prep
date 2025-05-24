@@ -38,18 +38,19 @@ the issue, or throw {@link UserNotSubscribedException} if user is not subscribed
 */
 @PostMapping("/issue-book")
 public ResponseEntity<Issue> issueBook(@RequestBody Issue issue) {
-Optional<User> userOpt = userRepo.findById(issue.getUser().getId());
-if (userOpt.isPresent()) {
-User user = userOpt.get();
-if (user.getSubscribed()) {
-Issue savedIssue = issueRepo.save(issue);
-return ResponseEntity.ok(savedIssue);
-} else {
-throw new UserNotSubscribedException("User subscription has expired");
-}
-} else {
-return ResponseEntity.noContent().build();
-}
+    Optional<User> userOpt = userRepo.findById(issue.getUser().getId());
+    if (userOpt.isPresent()) {
+        User user = userOpt.get();
+        if (user.getSubscribed()) {
+        Issue savedIssue = issueRepo.save(issue);
+        return ResponseEntity.ok(savedIssue);
+        } else {
+            throw new UserNotSubscribedException("User subscription has expired");
+                }
+        } 
+    else {
+        return ResponseEntity.noContent().build();
+        }
 }
 
 /**
