@@ -41,7 +41,7 @@ public ResponseEntity<Issue> issueBook(@RequestBody Issue issue) {
 Optional<User> userOpt = userRepo.findById(issue.getUser().getId());
 if (userOpt.isPresent()) {
 User user = userOpt.get();
-if (Boolean.TRUE.equals(user.getSubscribed())) {
+if (user.getSubscribed()) {
 Issue savedIssue = issueRepo.save(issue);
 return ResponseEntity.ok(savedIssue);
 } else {
