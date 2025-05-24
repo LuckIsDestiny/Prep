@@ -5,4 +5,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 
 @ResponseStatus(HttpStatus.FORBIDDEN)
 public class UserNotSubscribedException extends RuntimeException {
+     public UserNotSubscribedException(String msg) {
+    super(msg);
+  }
 }

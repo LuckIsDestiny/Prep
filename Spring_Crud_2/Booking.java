@@ -3,4 +3,5 @@ public class Booking {
     private String guestName;
     private int roomNumber;
     // Constructors, Getters, Setters
+    
 }
