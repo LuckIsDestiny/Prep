@@ -63,8 +63,8 @@ public ResponseEntity<Issue> issueBook(@RequestBody Issue issue) {
 */
 @PostMapping("/user")
 public ResponseEntity<User> createUser(@RequestBody User user) {
-User savedUser = userRepo.save(user);
-return ResponseEntity.ok(savedUser);
+    User savedUser = userRepo.save(user);
+    return ResponseEntity.ok(savedUser);
 }
 
 /**
@@ -77,14 +77,14 @@ return ResponseEntity.ok(savedUser);
 */
 @GetMapping("/renew-user-subscription/{id}")
 public ResponseEntity<User> renewUserSubscription(@PathVariable Long id) {
-Optional<User> userOpt = userRepo.findById(id);
-if (userOpt.isPresent()) {
-User user = userOpt.get();
-user.setSubscribed(true);
-userRepo.save(user);
-return ResponseEntity.ok(user);
-} else {
-return ResponseEntity.noContent().build();
-}
-}
+    Optional<User> userOpt = userRepo.findById(id);
+    if (userOpt.isPresent()) {
+        User user = userOpt.get();
+        user.setSubscribed(true);
+        userRepo.save(user);
+        return ResponseEntity.ok(user);
+    }else {
+        return ResponseEntity.noContent().build();
+        }
+    }
 }
