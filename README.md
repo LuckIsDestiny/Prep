@@ -87,7 +87,7 @@ Test Cases:
  Run the application using the ng serve -o command and enter an age of 18 or above The browser opens with the application running. The message "eligible to vote" should be displayed.
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
-React - patient
+React
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
 Digital Patient Registration System Development in ReactJS for a Clinic
 
@@ -313,3 +313,220 @@ const WelcomePage = () => {
 };
 
 export default WelcomePage;    complete the code
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+React Question -1 - patient 
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Patient Management Platform – ReactJS Segment
+
+Develop a segment of a patient management platform using ReactJS, tailored for healthcare staff. The platform should:
+
+Enable the registration of new patients
+
+Facilitate the retrieval of detailed patient information using a unique ID
+
+
+
+---
+
+Sample db.json
+
+{
+  "patients": [
+    {
+      "patientID": "P001",
+      "name": "John Doe",
+      "age": "30",
+      "gender": "Male",
+      "condition": "Hypertension",
+      "lastVisit": "2021-08-15"
+    },
+    {
+      "patientID": "P002",
+      "name": "Jane Smith",
+      "age": "25",
+      "gender": "Female",
+      "condition": "Asthma",
+      "lastVisit": "2021-09-01"
+    }
+    // ... More patients can be added
+  ]
+}
+
+
+---
+
+Tasks
+
+1. Develop a ReactJS application for patient management in healthcare settings.
+
+
+2. Implement a form that allows healthcare staff to register a new patient with:
+
+Name
+
+Age
+
+Gender
+
+Current medical condition
+
+Date of last visit
+
+
+
+3. Include validations for each input:
+
+Age as a positive integer
+
+Date format as YYYY-MM-DD
+
+
+
+4. Create an interface for users to input a patientID, which then fetches and displays the respective patient's detailed information.
+
+
+
+
+---
+
+Files to Complete
+
+./src/PatientInformation.js
+
+./src/PatientRegistrationForm.js
+
+./src/PatientService.js
+
+
+
+---
+
+Notes
+
+Do not change the structure of the db.json file.
+
+Focus on functionality only; UI styling is not required.
+
+
+
+---
+
+Testing and Submitting Your Code
+
+1. Click on WeCP Projects button to open the menu.
+
+
+2. Click on Start frontend server to start the React server.
+
+
+3. Click on Open preview to view the GUI.
+
+
+4. Click on Test & Submit app to test your code.
+
+
+
+> You will be given a congratulations message if the task is completed perfectly.
+
+
+
+
+---
+
+Provided Code Skeleton
+
+PatientInformation.js
+
+import React, { useState, useEffect } from 'react';
+import { getPatients } from './PatientService';
+import './App.css'; // Import CSS file
+
+export const PatientInformation = ({ patientID }) => {
+  const [patient, setPatient] = useState(null);
+
+  // Function to retrieve patient information based on patient ID
+  // use react hook to fetch patient information on ID change
+  // fetch all patients and find patient by patient ID
+
+  return (
+    <div className="patient-info-container">
+      {patient && (
+        <div>
+          {/* Display Patient information here */}
+        </div>
+      )}
+    </div>
+  );
+};
+
+
+---
+
+PatientRegistrationForm.js
+
+import React, { useState, useEffect } from 'react';
+import { addPatient } from './PatientService';
+import './App.css'; // Import CSS file
+
+// Patient registration form component
+const PatientRegistrationForm = ({ onRegister }) => {
+  const [errors, setErrors] = useState({});
+
+  const [formData, setFormData] = useState({
+    name: '',
+    age: '',
+    gender: '',
+    condition: '',
+    lastVisit: '',
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
+  const validateForm = () => {
+    const errors = {};
+    // validate form and return errors
+  };
+
+  const isValidDate = (dateString) => {
+    // validate date
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    // Call parent function to register patient and validate form
+  };
+
+  return (
+    <div>
+      {/* create patient form */}
+    </div>
+  );
+};
+
+export default PatientRegistrationForm;
+
+
+---
+
+PatientService.js
+
+import environment from "./environments/environment.ts"
+
+const API_URL = environment.apiUrl;
+
+export const getPatients = async () => {
+  // get all patients using fetch call to json server
+};
+
+export const addPatient = async (newPatient) => {
+  // add new patient by posting data to json server
+};
+
+
+
+
