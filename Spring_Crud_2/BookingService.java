@@ -13,3 +13,15 @@ public class BookingService {
         return bookingList.stream().filter(b -> b.getId() == id).findFirst().orElse(null);
     }
 }
+
+
+‐---------------------------------------------------------------------------
+
+public Booking getBookingById(int id) {
+for (Booking b : bookingList) {
+    if (b.getId() == id) {
+        return b;
+    }
+}
+return null;
+}
