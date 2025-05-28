@@ -1,5 +1,3 @@
-WELCOME.JS
-
 import React from 'react';
 
 const Welcome = () => {
