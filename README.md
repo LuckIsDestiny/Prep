@@ -528,5 +528,60 @@ export const addPatient = async (newPatient) => {
 };
 
 
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+javascript que
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+Magic Button String Search
+You are given two strings:
+
+A string S of length N
+
+A string T of length M
+
+You also have a magic button. When you press this magic button, the last character of string S is removed and placed at the beginning of the string. You may press this button N times, and after each press (including the initial string), you:
+
+Search for all occurrences of string T as a substring in the current version of S.
+
+For each occurrence, record the starting index of T in S.
+
+Add up all those starting indices to a running total.
+
+After pressing the button N times, output the sum of all recorded indices modulo 10^9 + 7.
+
+🔢 Input
+A string S of length N (1 ≤ N ≤ 10^4)
+
+A string T of length M (1 ≤ M ≤ N)
+
+🚀 Output
+A single integer: the sum of starting indices of all T occurrences in each rotated version of S, modulo 10^9 + 7.
+
+🔁 Example
+text
+Copy
+Edit
+Input:
+S = "abcabc"
+T = "abc"
+
+Output:
+14
+Explanation:
+Each rotation of S:
+
+"abcabc" → T found at 0 and 3 → indices sum = 0 + 3 = 3
+
+"cabcab" → T at 1 → sum = 1
+
+"bcabca" → T at 3 → sum = 3
+
+"abcabc" → same as step 1 → sum = 3
+
+"cabcab" → same as step 2 → sum = 1
+
+"bcabca" → same as step 3 → sum = 3
+
+Final answer = 3 + 1 + 3 + 3 + 1 + 3 = 14
+
 
 
