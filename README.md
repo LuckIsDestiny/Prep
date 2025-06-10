@@ -585,3 +585,51 @@ Final answer = 3 + 1 + 3 + 3 + 1 + 3 = 14
 
 
 
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Spring Crud -5
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Build a Library Management Application in Spring Boot (Intermediate Level)
+
+< Previous ent
+
+Project descriptions
+
+The government is building a centralized library management system which involves a micro-service, allowing people to issue books and return them at the right time.
+
+In this task, you need to conform to the following requirements:
+
+1. Build "depositBook" API in a reactive way(should return Mono).
+
+2. Users can issue a book and deposit them. If they issue the book after the given period, fine should apply.
+
+3. You can find the fields and do the math(issueDate, period, returnDate). This micro-service should be built using the Spring Boot REST API framework and connect to the database using the JPA API.
+
+4. "depositBook" API should be built using the Spring Boot WebFlux.
+
+The application exposes 2 more APIs. The detalls of the APIs are given below:
+
+1./api/v1/issueBook [POST]: Users issue a book of their choice, If book quantity is zero, It should throw the exception "BookNot AvailableException".
+
+2./api/VI/depositBook [POST]: Send issue, return fine if there is one or return 0 (this one should be reactive)
+
+Your task is to complete the file
+
+-src/main/java/com/wecp/library/controller/LibraryController.java
+
+src/main/java/com/wecp/library/repository/BookRepository.java
+
+src/main/java/com/wecp/library/repository/IssueRepository.java
+
+You can find blank jpe repositories here:
+
+src/main/java/com/wecp/library/repository/BookRepository.java
+
+src/main/java/com/wecp/library/repository/IssueRepository.java
+
+ticles:
+
+1. Implementation related specifics are added directly as javadocs in the workspace.
+
+2. Ensure that the structure and
+
+datatypes of the APIs are followed as specified in the comments to ensure that the code is evaluated correctly
