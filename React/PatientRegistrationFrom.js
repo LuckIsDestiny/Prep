@@ -17,7 +17,13 @@ const PatientRegistrationForm = ({ onRegister }) => {
     if (!formData.age) newErrors.age = 'Age is required';
     if (!formData.gender) newErrors.gender = 'Gender is required';
     if (!formData.condition) newErrors.condition = 'Condition is required';
-    if (!formData.lastVisit) newErrors.lastVisit = 'Last Visit is required';
+  if (!formData.lastVisit) {
+    errors.lastVisit = "last visit is required";
+  } else if (!isValidDate(formData.lastVisit)) {
+    errors.lastVisit = "invalid date format";
+  } else if (new Date(formData.lastVisit) > new Date()) {
+    errors.lastVisit = "last visit cannot be future date";
+  }
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
@@ -36,7 +42,13 @@ const PatientRegistrationForm = ({ onRegister }) => {
     setFormData({ name: '', age: '', gender: '', condition: '', lastVisit: '' });
     setErrors({});
   };
-
+const isValidDate = (dateString) => {
+  const date = new Date(dateString);
+  return (
+    !isNaN(date.getTime()) && // valid date object
+    dateString.match(/^\d{4}-\d{2}-\d{2}$/) // YYYY-MM-DD format
+  );
+};
   return (
     <form onSubmit={handleSubmit}>
       <input placeholder="Name" name="name" value={formData.name} onChange={handleChange} />
