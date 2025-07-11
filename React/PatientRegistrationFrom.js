@@ -17,13 +17,13 @@ const PatientRegistrationForm = ({ onRegister }) => {
     if (!formData.age) newErrors.age = 'Age is required';
     if (!formData.gender) newErrors.gender = 'Gender is required';
     if (!formData.condition) newErrors.condition = 'Condition is required';
-  if (!formData.lastVisit) {
-    errors.lastVisit = "last visit is required";
-  } else if (!isValidDate(formData.lastVisit)) {
-    errors.lastVisit = "invalid date format";
-  } else if (new Date(formData.lastVisit) > new Date()) {
-    errors.lastVisit = "last visit cannot be future date";
-  }
+    if (!formData.lastVisit) {
+  newErrors.lastVisit = "Last Visit is required";
+} else if (!isValidDate(formData.lastVisit)) {
+  newErrors.lastVisit = "Invalid date format";
+} else if (new Date(formData.lastVisit) > new Date()) {
+  newErrors.lastVisit = "Last Visit cannot be future date";
+}
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
