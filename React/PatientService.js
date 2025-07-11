@@ -1,12 +1,12 @@
 export const addPatient = async (patient) => {
  return fetch("url",{
    method:'POST',
-   body:JSON.Stringfy(patient)
- }).then((res)=>res.json)
+   body:JSON.stringfy(patient)
+ }).then((res)=>res.json())
 };
 
 export const getPatients = async () => {
-  return fetch("url").then((res)=>res.json);
+  return fetch("url").then((res)=>res.json());
 };
 
 
