@@ -1,12 +1,15 @@
+import environment from "./environments/environment.ts";
+const API_URL = environment.apiUrl;
+
 export const addPatient = async (patient) => {
- return fetch("url",{
+ return fetch(`${API_URL}`,{
    method:'POST',
    body:JSON.stringfy(patient)
  }).then((res)=>res.json())
 };
 
 export const getPatients = async () => {
-  return fetch("url").then((res)=>res.json());
+  return fetch(`${API_URL}`).then((res)=>res.json());
 };
 
 
